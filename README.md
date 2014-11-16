@@ -1,4 +1,6 @@
 docker-sinUI
 ============
-Sinatra
-Bootstrap
+Simple UI for Docker's Containers and Images management.
+
+* Sinatra(ruby)
+* Bootstrap
