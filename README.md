@@ -7,11 +7,11 @@ Simple UI for Docker's Containers and Images management.
 
 ## Docker Remote API: v1.2
 
-## Containers API
+## Containers Function
 * List Containers
 * Inspect Containers
 * and so on
 
-## Images API
+## Images Function
 * List Images
 * and so on
