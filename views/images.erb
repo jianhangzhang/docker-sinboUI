@@ -5,16 +5,28 @@
     <th>Id</th>
     <th>Created</th>
     <th>RepoTags</th>
+    <th>Action</th>
   </tr>
   </thead>
 
   <tbody>
-  <% @resp_json.each do |r| %>
+  <% @data.each do |r| %>
       <tr>
-        <td><%= @resp_json.index(r) + 1 %></td>
-        <td><%= r['Id'] %></td>
-        <td><%= r['Created'] %></td>
-        <td><%= r['RepoTags'] %></td>
+        <td class="col-md-1"><%= @data.index(r) + 1 %></td>
+        <td class="col-md-1"><%= r['Id'][0...12] %></td>
+        <td class="col-md-1"><%= r['Created'] %></td>
+        <td class="col-md-1"><%= r['RepoTags'][0] %></td>
+        <td>
+          <form action="/images/show" method="get" style="display: inline;">
+            <input type="hidden" name="image_name" value="<%= r['RepoTags'][0] %>">
+            <button class="btn btn-link" type="submit">Show</button>
+          </form>
+
+          <form action="#" method="get" style="display: inline;">
+            <input type="hidden" name="image_name" value="<%= r['RepoTags'][0] %>">
+            <button class="btn btn-link" type="submit">Delete</button>
+          </form>
+        </td>
       </tr>
   <% end %>
   </tbody>
