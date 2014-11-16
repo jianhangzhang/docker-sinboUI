@@ -6,6 +6,14 @@ require 'json'
 HOST='http://10.1.2.11:4243'
 
 helpers do
+  def container_list(num)
+    # num = 0, list Up containers
+    # num = 1, list all containers
+    conn  = HTTP.get HOST + "/containers/json?all=#{num}"
+    resp = conn.body.readpartial
+    JSON.parse(resp)
+  end
+
   def container_inspect(id)
     conn = HTTP.get HOST+"/containers/#{id}/json"
     resp = conn.body.readpartial
@@ -29,10 +37,15 @@ get '/' do
 end
 
 get '/containers' do
-  conn = HTTP.get HOST + '/containers/json?all=1'
-  resp = conn.body.readpartial
-  @data = JSON.parse(resp)
+  @data_up = container_list(0)
+  @data_all = container_list(1)
   erb :containers, :layout => :_header
+end
+
+get '/containers/up' do
+  @data_up = container_list(0)
+  @data_all = container_list(1)
+  erb :containers_up, :layout => :_header
 end
 
 get '/containers/show' do
