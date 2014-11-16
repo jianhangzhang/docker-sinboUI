@@ -1,0 +1,35 @@
+<head>
+  <link rel="stylesheet" href="bootstrap.css">
+</head>
+
+<body>
+<h1>Containers</h1>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Id</th>
+    <th>Image</th>
+    <th>Names</th>
+    <th>Ports</th>
+    <th>Status</th>
+    <th>Command</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @resp_json.each do |r| %>
+      <tr>
+        <td><%= @resp_json.index(r) + 1 %></td>
+        <td><%= r['Id'] %></td>
+        <td><%= r['Image'] %></td>
+        <td><%= r['Names'] %></td>
+        <td><%= r['Ports'] %></td>
+        <td><%= r['Status'] %></td>
+        <td><%= r['Command'] %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+</body>
