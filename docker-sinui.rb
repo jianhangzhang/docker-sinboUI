@@ -12,25 +12,25 @@ helpers do
 end
 
 get '/' do
-  erb :home
-end
-
-get '/images' do
-  conn = HTTP.get HOST + '/images/json'
-  resp = conn.body.readpartial
-  @resp_json = JSON.parse(resp)
-  erb :images
+  erb :home, :layout => :_header
 end
 
 get '/containers' do
   conn = HTTP.get HOST + '/containers/json?all=1'
   resp = conn.body.readpartial
   @resp_json = JSON.parse(resp)
-  erb :containers
+  erb :containers, :layout => :_header
 end
 
 get '/containers/delete' do
   delete_a_container(x)
+end
+
+get '/images' do
+  conn = HTTP.get HOST + '/images/json'
+  resp = conn.body.readpartial
+  @resp_json = JSON.parse(resp)
+  erb :images, :layout => :_header
 end
 
 get '/create_a_container' do
