@@ -1,4 +1,4 @@
-## docker-sinUI
+## docker-sinboUI
 A Web UI for Docker's Containers and Images management.
 
 * Sinatra（ruby web framework）
