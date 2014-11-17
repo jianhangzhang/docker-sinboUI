@@ -1,8 +1,8 @@
-docker-sinUI
+## docker-sinUI
 ============
 Simple UI for Docker's Containers and Images management.
 
-* Sinatra（ruby）
+* Sinatra（ruby web framework）
 * Bootstrap
 
 ## Docker Remote API: v1.2
@@ -10,8 +10,12 @@ Simple UI for Docker's Containers and Images management.
 ## Containers Function
 * List Containers
 * Inspect Containers
-* and so on
+* continue ...
 
 ## Images Function
 * List Images
-* and so on
+* continue ...
+
+## Installition Guide
+* rbenv
+* ruby/gems
