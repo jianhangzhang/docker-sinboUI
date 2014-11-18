@@ -15,6 +15,22 @@ get '/containers/show' do
   erb :'containers/containers_show', :layout => :_header
 end
 
+get '/containers/start' do
+  container_start(params[:container_id])
+  redirect '/containers'
+end
+
+get '/containers/stop' do
+  container_stop(params[:container_id])
+  redirect '/containers'
+end
+
+get '/containers/restart' do
+  container_restart(params[:container_id])
+  redirect '/containers'
+end
+
 get '/containers/delete' do
-  delete_a_container(x)
+  container_delete(params[:container_id])
+  redirect '/containers'
 end

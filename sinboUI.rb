@@ -23,6 +23,18 @@ helpers do
     JSON.parse(resp)
   end
 
+  def container_start(id)
+    HTTP.post HOST+"/containers/#{id}/start"
+  end
+
+  def container_stop(id)
+    HTTP.post HOST+"/containers/#{id}/stop"
+  end
+
+  def container_restart(id)
+    HTTP.post HOST+"/containers/#{id}/restart?t=1"
+  end
+
   def container_delete(id)
     HTTP.delete HOST+"/containers/#{id}"
   end

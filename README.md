@@ -9,7 +9,10 @@ A Web UI for Docker's Containers and Images management.
 ## Containers Function
 * List Containers
 * Inspect Containers
-* continue ...
+* Start a Container
+* Stop a Container
+* Restart a Container
+* delete a Container
 
 ## Images Function
 * List Images
