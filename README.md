@@ -12,7 +12,7 @@ A Web UI for Docker's Containers and Images management.
 * Start a Container
 * Stop a Container
 * Restart a Container
-* delete a Container
+* delete a Container（dangerous, commente it）
 
 ## Images Function
 * List Images
