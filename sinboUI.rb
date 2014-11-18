@@ -3,9 +3,8 @@ require 'sinatra/reloader'
 require 'http'
 require 'json'
 
-load "routes/test.rb"
-load "routes/containers.rb"
-load "routes/images.rb"
+load 'routes/containers.rb'
+load 'routes/images.rb'
 
 HOST='http://10.1.2.11:4243'
 
