@@ -3,6 +3,10 @@ require 'sinatra/reloader'
 require 'http'
 require 'json'
 
+load "routes/test.rb"
+load "routes/containers.rb"
+load "routes/images.rb"
+
 HOST='http://10.1.2.11:4243'
 
 helpers do
@@ -31,41 +35,6 @@ helpers do
   end
 end
 
-#####
 get '/' do
   erb :home, :layout => :_header
 end
-
-get '/containers' do
-  @data_up = container_list(0)
-  @data_all = container_list(1)
-  erb :containers, :layout => :_header
-end
-
-get '/containers/up' do
-  @data_up = container_list(0)
-  @data_all = container_list(1)
-  erb :containers_up, :layout => :_header
-end
-
-get '/containers/show' do
-  @data = container_inspect(params[:container_id])
-  erb :containers_show, :layout => :_header
-end
-
-get '/containers/delete' do
-  delete_a_container(x)
-end
-
-get '/images' do
-  conn = HTTP.get HOST + '/images/json'
-  resp = conn.body.readpartial
-  @data = JSON.parse(resp)
-  erb :images, :layout => :_header
-end
-
-get '/images/show' do
-  @data = image_inspect(params[:image_name])
-  erb :images_show, :layout => :_header
-end
-#####

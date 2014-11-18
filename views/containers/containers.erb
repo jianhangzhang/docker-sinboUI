@@ -1,0 +1,50 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <ul class="nav nav-pills" role="tablist">
+      <li role="presentation" class="active"><a href="#">Total <span class="badge"><%= @data_all.count %></span></a>
+      </li>
+      <li role="presentation"><a href="/containers/up">Up <span class="badge"><%= @data_up.count %></span></a></li>
+    </ul>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Id</th>
+        <th>Names</th>
+        <th>Image</th>
+        <th>Ports</th>
+        <th>Status</th>
+        <th>Command</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @data_all.each do |r| %>
+          <tr>
+            <td class="col-md-1"><%= @data_all.index(r) + 1 %></td>
+            <td class="col-md-1"><%= r['Id'][0...12] %></td>
+            <td class="col-md-1"><%= r['Names'][0][1..-1] %></td>
+            <td class="col-md-1"><%= r['Image'] %></td>
+            <td class="col-md-1"><%= r['Ports'] %></td>
+            <td class="col-md-3"><%= r['Status'] %></td>
+            <td class="col-md-1"><%= r['Command'] %></td>
+            <td>
+              <form action="/containers/show" method="get" style="display: inline;">
+                <input type="hidden" name="container_id" value="<%= r['Id'][0...12] %>">
+                <button class="btn btn-link" type="submit">Show</button>
+              </form>
+
+              <form action="#" method="get" style="display: inline;">
+                <input type="hidden" name="container_id" value="<%= r['Id'][0...12] %>">
+                <button class="btn btn-link" type="submit">Delete</button>
+              </form>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
