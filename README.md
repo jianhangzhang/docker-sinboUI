@@ -10,15 +10,15 @@ A Web UI for Docker's Containers and Images management.
 
 ## Docker Remote API: v1.2
 
-## Containers Function
+## Containers Management
 * List Containers
-* Inspect Containers
+* Show a Container
 * Start a Container
 * Stop a Container
 * Restart a Container
 * delete a Container（dangerous, comment it）
 
-## Images Function
+## Images Management
 * List Images
 * continue ...
 
