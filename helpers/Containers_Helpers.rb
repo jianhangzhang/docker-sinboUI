@@ -28,4 +28,7 @@ module ContainersHelpers
   def container_delete(id)
     HTTP.delete HOST+"/containers/#{id}"
   end
+
+  def container_create(params)
+  end
 end

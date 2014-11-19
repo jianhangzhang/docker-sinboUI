@@ -1,0 +1,37 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Create a Container</h3>
+  </div>
+  <div class="panel-body">
+    <div class="alert alert-success" role="alert">
+      </p>
+      <p>Command: docker run <strong data-bind="text: docker_run"></strong></p>
+
+      <p>args: <input data-bind="value: args" /></p>
+      <p>name: <input data-bind="value: name" /></p>
+      <p>hostname: <input data-bind="value: hostname" /></p>
+      <p>image: <input data-bind="value: image" /></p>
+      <p>cmd: <input data-bind="value: cmd" /></p>
+      <button data-bind="click: create_a_container">Create</button>
+    </div>
+  </div>
+</div>
+
+<script>
+    function AppViewModel() {
+        this.args = ko.observable("-it");
+        this.name = ko.observable("name");
+        this.hostname = ko.observable("hostname");
+        this.image = ko.observable("image");
+        this.cmd = ko.observable("/bin/bash");
+        this.docker_run = ko.computed(function() {
+                    return this.args() + " --name=" + this.name() + " --hostname=" + this.hostname() + " " + this.image() + " " + this.cmd();
+        }, this);
+        this.create_a_container = function(){
+            $.post('/containers/create', {params: this.docker_run()}, function () {
+
+            })
+        }
+    };
+    ko.applyBindings(new AppViewModel());
+</script>

@@ -11,7 +11,7 @@ load 'helpers/Images_Helpers.rb'
 
 helpers ContainersHelpers, ImagesHelpers
 
-HOST='http://192.168.21.46:4243'
+HOST='http://10.1.2.11:4243'
 
 get '/' do
   erb :home, :layout => :_header

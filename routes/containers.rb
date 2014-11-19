@@ -34,3 +34,13 @@ get '/containers/delete' do
   container_delete(params[:container_id])
   redirect '/containers'
 end
+
+get '/containers/create' do
+  container_delete(params[:container_id])
+  erb :'containers/containers_create', :layout => :_header
+end
+
+post '/containers/create' do
+  puts params
+
+end
