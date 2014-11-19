@@ -1,8 +1,12 @@
-<ul class="nav nav-pills" role="tablist">
-  <li role="presentation"><a href="/containers">Total <span class="badge"><%= @data_all.count %></span></a></li>
-  <li role="presentation" class="active"><a href="/containers/up">Up <span class="badge"><%= @data_up.count %></span></a></li>
-</ul>
+<div class="panel panel-default">  
+	<div class="panel-heading">
+		<ul class="nav nav-pills" role="tablist">
+  		<li role="presentation"><a href="/containers">Total <span class="badge"><%= @data_all.count %></span></a></li>
+  		<li role="presentation" class="active"><a href="/containers/up">Up <span class="badge"><%= @data_up.count %></span></a></li>
+		</ul>
+	</div>
 
+<div class="panel-body">
 <table class="table table-striped">
   <thead>
   <tr>
@@ -25,13 +29,34 @@
         <td class="col-md-1"><%= r['Names'][0][1..-1] %></td>
         <td class="col-md-1"><%= r['Image'] %></td>
         <td class="col-md-1"><%= r['Ports'] %></td>
-        <td class="col-md-3"><%= r['Status'] %></td>
+        <td class="col-md-1">
+					<% if r['Status'].include?("Up") %>
+          	<%= "Up" %>
+          <% else %>
+          	<%= "Down" %>
+          <% end %>
+				</td>
         <td class="col-md-1"><%= r['Command'] %></td>
         <td>
           <form action="/containers/show" method="get" style="display: inline;">
             <input type="hidden" name="container_id" value="<%= r['Id'][0...12] %>">
             <button class="btn btn-link" type="submit">Show</button>
           </form>
+
+					    <form action="/containers/start" method="get" style="display: inline;">
+                <input type="hidden" name="container_id" value="<%= r['Id'][0...12] %>">
+                <button class="btn btn-link" type="submit">Start</button>
+              </form>
+
+              <form action="/containers/stop" method="get" style="display: inline;">
+                <input type="hidden" name="container_id" value="<%= r['Id'][0...12] %>">
+                <button class="btn btn-link" type="submit">Stop</button>
+              </form>
+
+              <form action="/containers/restart" method="get" style="display: inline;">
+                <input type="hidden" name="container_id" value="<%= r['Id'][0...12] %>">
+                <button class="btn btn-link" type="submit">Restart</button>
+              </form>
 
           <form action="#" method="get" style="display: inline;">
             <input type="hidden" name="container_id" value="<%= r['Id'][0...12] %>">
@@ -42,3 +67,5 @@
   <% end %>
   </tbody>
 </table>
+</div>
+</div>

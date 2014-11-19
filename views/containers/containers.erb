@@ -29,7 +29,13 @@
             <td class="col-md-1"><%= r['Names'][0][1..-1] %></td>
             <td class="col-md-1"><%= r['Image'] %></td>
             <td class="col-md-1"><%= r['Ports'] %></td>
-            <td class="col-md-3"><%= r['Status'] %></td>
+            <td class="col-md-1">
+							<% if r['Status'].include?("Up") %>
+								<%= "Up" %>
+							<% else %>
+								<%= "Down" %>
+							<% end %>
+						</td>
             <td class="col-md-1"><%= r['Command'] %></td>
             <td>
               <form action="/containers/show" method="get" style="display: inline;">
