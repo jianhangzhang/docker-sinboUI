@@ -4,6 +4,10 @@ A Web UI for Docker's Containers and Images management.
 * Sinatra（ruby web framework）
 * Bootstrap（css framework）
 
+## Installition Guide
+* rbenv
+* ruby/gems
+
 ## Docker Remote API: v1.2
 
 ## Containers Function
@@ -18,6 +22,4 @@ A Web UI for Docker's Containers and Images management.
 * List Images
 * continue ...
 
-## Installition Guide
-* rbenv
-* ruby/gems
+
