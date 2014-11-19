@@ -5,7 +5,7 @@ A Web UI for Docker's Containers and Images management.
 * Bootstrap（css framework）
 
 ## Installition Guide
-* rbenv
+* rbenv（suggestion）
 * ruby/gems
 
 ## Docker Remote API: v1.2
