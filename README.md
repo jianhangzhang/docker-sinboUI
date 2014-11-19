@@ -1,11 +1,11 @@
 ## docker-sinboUI
 A Web UI for Docker's Containers and Images management.
 
-* Sinatra（ruby web framework）
-* Bootstrap（css framework）
+* Sinatra (ruby web framework)
+* Bootstrap (css framework)
 
 ## Installition Guide
-* rbenv（suggestion）
+* rbenv (suggestion)
 * ruby/gems
 
 ## Docker Remote API: v1.2
@@ -16,7 +16,7 @@ A Web UI for Docker's Containers and Images management.
 * Start a Container
 * Stop a Container
 * Restart a Container
-* delete a Container（dangerous, comment it）
+* delete a Container (dangerous, comment it)
 
 ## Images Management
 * List Images
