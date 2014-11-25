@@ -11,7 +11,7 @@ get '/containers/up' do
 end
 
 get '/containers/show' do
-  @data = container_inspect(params[:container_id])
+  @data = container_show(params[:container_id])
   erb :'containers/containers_show', :layout => :_header
 end
 
@@ -30,8 +30,24 @@ get '/containers/restart' do
   redirect '/containers'
 end
 
+get '/containers/kill' do
+  container_kill(params[:container_id])
+  redirect '/containers'
+end
+
+get '/containers/pause' do
+  container_pause(params[:container_id])
+  redirect '/containers'
+end
+
+get '/containers/unpause' do
+  container_unpause(params[:container_id])
+  redirect '/containers'
+end
+
 get '/containers/delete' do
-  container_delete(params[:container_id])
+#  puts params
+#  container_delete(params[:container_id])
   redirect '/containers'
 end
 
@@ -42,5 +58,4 @@ end
 
 post '/containers/create' do
   puts params
-
 end

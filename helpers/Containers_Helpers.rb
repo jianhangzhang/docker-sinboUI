@@ -2,13 +2,13 @@ module ContainersHelpers
   def container_list(num)
     # num = 0, list Up containers
     # num = 1, list all containers
-    conn  = HTTP.get HOST + "/containers/json?all=#{num}"
+    conn = HTTP.get HOST + "/containers/json?all=#{num}"
     resp = conn.body.readpartial
     JSON.parse(resp)
   end
 
-  def container_inspect(id)
-    conn = HTTP.get HOST+"/containers/#{id}/json"
+  def container_show(id)
+    conn = HTTP.get HOST + "/containers/#{id}/json"
     resp = conn.body.readpartial
     JSON.parse(resp)
   end
@@ -25,10 +25,19 @@ module ContainersHelpers
     HTTP.post HOST+"/containers/#{id}/restart?t=1"
   end
 
-  def container_delete(id)
-    HTTP.delete HOST+"/containers/#{id}"
+  def container_kill(id)
+    HTTP.post HOST+"/containers/#{id}/kill"
   end
 
-  def container_create(params)
+  def container_pause(id)
+    HTTP.post HOST+"/containers/#{id}/pause"
+  end
+
+  def container_unpause(id)
+    HTTP.post HOST+"/containers/#{id}/unpause"
+  end
+
+  def container_delete(id)
+    HTTP.delete HOST+"/containers/#{id}"
   end
 end

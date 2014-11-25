@@ -6,8 +6,8 @@ require 'json'
 load 'routes/containers.rb'
 load 'routes/images.rb'
 
-load 'helpers/Containers_Helpers.rb'
-load 'helpers/Images_Helpers.rb'
+load 'helpers/Containers_helpers.rb'
+load 'helpers/Images_helpers.rb'
 
 helpers ContainersHelpers, ImagesHelpers
 
