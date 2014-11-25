@@ -1,5 +1,6 @@
 ## docker-sinboUI
 A Web UI for Docker's Containers and Images management.
+A Demo Web: http://107.170.226.250:4567/
 
 * Sinatra (ruby web framework)
 * Bootstrap (css framework)
