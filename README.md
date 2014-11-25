@@ -21,15 +21,6 @@ A Web UI for Docker's Containers and Images management.
 * Pause a container
 * Unpause a container
 * Delete a container (dangerous, comment it)
-=======
-* List Containers
-* Show a Container
-* Start a Container
-* Stop a Container
-* Restart a Container
-* Delete a Container (dangerous, comment it)
-* Create a Containter (not work now)
->>>>>>> FETCH_HEAD
 
 ## Images Management
 * List images
