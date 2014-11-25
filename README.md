@@ -6,7 +6,7 @@ A Web UI for Docker's Containers and Images management.
 
 ## Installition Guide
 * rbenv (suggestion)
-* ruby/gems
+* ruby1.9.3
 
 ## Docker Remote API: v1.2
 
