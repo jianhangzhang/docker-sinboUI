@@ -3,11 +3,11 @@ require 'sinatra/reloader'
 require 'http'
 require 'json'
 
-load 'routes/containers.rb'
-load 'routes/images.rb'
+require './routes/containers.rb'
+require './routes/images.rb'
 
-load 'helpers/Containers_helpers.rb'
-load 'helpers/Images_helpers.rb'
+require './helpers/Containers_helpers.rb'
+require './helpers/Images_helpers.rb'
 
 helpers ContainersHelpers, ImagesHelpers
 
