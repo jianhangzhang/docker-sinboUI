@@ -11,7 +11,6 @@ A Web UI for Docker's Containers and Images management.
 ## Docker Remote API: v1.2
 
 ## Containers Management
-<<<<<<< HEAD
 * List containers
 * Show a container
 * Start a container
